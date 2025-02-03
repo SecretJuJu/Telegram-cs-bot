@@ -22,8 +22,32 @@ provider:
     shouldStartNameWithService: true
 
 plugins:
-  - serverless-plugin-typescript
+  - serverless-esbuild
   - serverless-offline
+
+package:
+  individually: true
+  patterns:
+    - '!node_modules/**'
+    - '!.git/**'
+    - '!.github/**'
+    - '!.vscode/**'
+    - '!test/**'
+    - '!README.md'
+    - '!.gitignore'
+    - '!.prettierrc'
+    - '!.eslintrc.json'
+    - '!tsconfig.json'
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+    sourcemap: false
+    exclude: ['aws-sdk']
+    target: 'node18'
+    platform: 'node'
+    concurrency: 10
 
 functions:
   webhook:
