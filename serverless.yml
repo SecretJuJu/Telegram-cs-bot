@@ -21,19 +21,11 @@ provider:
   apiGateway:
     minimumCompressionSize: 1024 # 압축 설정으로 비용 절감
     shouldStartNameWithService: true
-    apiKeys: []
-    domain:
-      domainName: recapify-telegram.secretjuju.kr
-      basePath: ''
-      stage: ${self:provider.stage}
-      createRoute53Record: true
-      endpointType: 'regional'
-      securityPolicy: tls_1_2
-      certificateArn: ${env:CERTIFICATE_ARN}
 
 plugins:
   - serverless-esbuild
   - serverless-offline
+  - serverless-domain-manager
 
 package:
   individually: true
@@ -50,6 +42,14 @@ package:
     - '!tsconfig.json'
 
 custom:
+  customDomain:
+    domainName: recapify-telegram.secretjuju.kr
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+    endpointType: 'regional'
+    securityPolicy: tls_1_2
+    certificateArn: ${env:CERTIFICATE_ARN}
   esbuild:
     bundle: true
     minify: true

@@ -16,6 +16,7 @@
   "devDependencies": {
     "esbuild": "^0.19.0",
     "serverless-esbuild": "^1.50.0",
+    "serverless-domain-manager": "^7.3.3",
     "@types/aws-lambda": "^8.10.131",
     "@types/node": "^20.11.0",
     "@types/node-telegram-bot-api": "^0.61.0",
