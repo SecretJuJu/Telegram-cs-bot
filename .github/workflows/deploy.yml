@@ -38,4 +38,5 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           SUPPORT_CHAT_ID: ${{ secrets.SUPPORT_CHAT_ID }}
+          CERTIFICATE_ARN: ${{ secrets.CERTIFICATE_ARN }}
         run: pnpm run deploy
