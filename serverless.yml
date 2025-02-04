@@ -54,10 +54,14 @@ custom:
     bundle: true
     minify: true
     sourcemap: false
-    exclude: ['aws-sdk']
+    exclude:
+      - aws-sdk
+      - effect
     target: 'node18'
     platform: 'node'
     concurrency: 10
+    external:
+      - effect
 
 functions:
   webhook:
