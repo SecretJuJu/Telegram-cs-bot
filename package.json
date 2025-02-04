@@ -24,7 +24,7 @@
     "prettier": "^3.2.0",
     "serverless": "^3.38.0",
     "serverless-domain-manager": "^7.3.3",
-    "serverless-esbuild": "^1.50.0",
+    "serverless-esbuild": "1.46.0",
     "serverless-offline": "^13.3.0",
     "typescript": "^5.3.0"
   }
